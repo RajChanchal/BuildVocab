@@ -10,15 +10,14 @@ import UIKit
 
 class LessonsViewController: UIViewController {
 
-    @IBOutlet private weak var lblLessonTitle: UILabel!
-    @IBOutlet private weak var lblLessonStatus: UILabel!
-    @IBOutlet private weak var viewLessonStatusBar: UIView!
-    @IBOutlet private weak var lblLessonActionTitle: UILabel!
+    @IBOutlet weak var tblView: UITableView!
+    
     
     var lessonsViewModel = LessonsViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tblView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,5 +26,22 @@ class LessonsViewController: UIViewController {
     }
 
 
+}
+extension LessonsViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lessonsViewModel.lessons.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! LessonCell
+        cell.populateLessonData(lesson: lessonsViewModel.lessons[indexPath.row], lessonNum: indexPath.row+1)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //
+    }
 }
 

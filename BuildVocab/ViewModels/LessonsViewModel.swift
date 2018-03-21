@@ -9,9 +9,21 @@
 import UIKit
 
 class LessonsViewModel: NSObject {
-    private var lessons:[Lesson]!
+    var lessons:[Lesson]!
     override init() {
+        super.init()
         self.lessons = [Lesson]()
-        
+        self.populateLessons()
     }
+    
+    private func populateLessons(){
+        if let lessonFiles = CSVWrapper.fetchLessonFileNames(){
+            print("numbers: \(lessonFiles)")
+            for lessonFileName in lessonFiles{
+                let lesson = Lesson.init(fileName: lessonFileName)
+                self.lessons.append(lesson)
+            }
+        }
+    }
+    
 }
