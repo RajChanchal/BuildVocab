@@ -1,0 +1,15 @@
+PODS:
+  - CSVImporter (1.9.0):
+    - HandySwift (~> 2.5)
+  - HandySwift (2.5.0)
+
+DEPENDENCIES:
+  - CSVImporter
+
+SPEC CHECKSUMS:
+  CSVImporter: 34c3f9a2f47c61c7e2c830073002b00a682c32ee
+  HandySwift: 7c6927fcf1b13d691e76091f50e8e5c5e930f191
+
+PODFILE CHECKSUM: 350f4340a7d187b391090ac75e1efe4364839479
+
+COCOAPODS: 1.2.0
