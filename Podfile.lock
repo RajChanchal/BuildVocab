@@ -1,15 +1,12 @@
 PODS:
-  - CSVImporter (1.9.0):
-    - HandySwift (~> 2.5)
-  - HandySwift (2.5.0)
+  - CardsLayout (0.0.1)
 
 DEPENDENCIES:
-  - CSVImporter
+  - CardsLayout
 
 SPEC CHECKSUMS:
-  CSVImporter: 34c3f9a2f47c61c7e2c830073002b00a682c32ee
-  HandySwift: 7c6927fcf1b13d691e76091f50e8e5c5e930f191
+  CardsLayout: ceeb8f9c26319b47a2f0995ea4590cf7ba881462
 
-PODFILE CHECKSUM: 350f4340a7d187b391090ac75e1efe4364839479
+PODFILE CHECKSUM: 9970a5a3f863861073dafd52f882cdb1246b2366
 
 COCOAPODS: 1.2.0

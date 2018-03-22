@@ -19,6 +19,14 @@
 		274240A6206237E800781534 /* LessonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240A5206237E800781534 /* LessonsViewModel.swift */; };
 		274240AA20623A2B00781534 /* Lesson1.csv in Resources */ = {isa = PBXBuildFile; fileRef = 274240A920623A2B00781534 /* Lesson1.csv */; };
 		274240AE20623D0000781534 /* CSVWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240AD20623D0000781534 /* CSVWrapper.swift */; };
+		274240B32062F34200781534 /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240B22062F34200781534 /* CSwiftV.swift */; };
+		274240B62063896600781534 /* LearnLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240B52063896600781534 /* LearnLessonViewController.swift */; };
+		274240BA20639BEF00781534 /* WordCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240B920639BEF00781534 /* WordCardCell.swift */; };
+		274240BE2063A00300781534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240BD2063A00300781534 /* Constants.swift */; };
+		274240C32063A9DF00781534 /* LessonTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C22063A9DF00781534 /* LessonTestViewController.swift */; };
+		274240C52063AA2A00781534 /* LessonTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C42063AA2A00781534 /* LessonTestViewModel.swift */; };
+		274240C72063AA5900781534 /* LearnLessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C62063AA5800781534 /* LearnLessonViewModel.swift */; };
+		274240C92063B28100781534 /* TestCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C82063B28100781534 /* TestCardCollectionViewCell.swift */; };
 		CFA8A3B7E61F7FEFB6B60414 /* Pods_BuildVocabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013D422A2B88A98C30C4D17C /* Pods_BuildVocabTests.framework */; };
 		DB0CF981774B29B82E538D30 /* Pods_BuildVocab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDF6EDDF7CF22869ED80821 /* Pods_BuildVocab.framework */; };
 		EF59AE5C07DE44C694237EF5 /* Pods_BuildVocabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F5D130BCF26504ED0710B /* Pods_BuildVocabUITests.framework */; };
@@ -61,6 +69,15 @@
 		274240A5206237E800781534 /* LessonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsViewModel.swift; sourceTree = "<group>"; };
 		274240A920623A2B00781534 /* Lesson1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Lesson1.csv; sourceTree = "<group>"; };
 		274240AD20623D0000781534 /* CSVWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVWrapper.swift; sourceTree = "<group>"; };
+		274240B12062F34200781534 /* CSwiftV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSwiftV.h; sourceTree = "<group>"; };
+		274240B22062F34200781534 /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		274240B52063896600781534 /* LearnLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLessonViewController.swift; sourceTree = "<group>"; };
+		274240B920639BEF00781534 /* WordCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCardCell.swift; sourceTree = "<group>"; };
+		274240BD2063A00300781534 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		274240C22063A9DF00781534 /* LessonTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTestViewController.swift; sourceTree = "<group>"; };
+		274240C42063AA2A00781534 /* LessonTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTestViewModel.swift; sourceTree = "<group>"; };
+		274240C62063AA5800781534 /* LearnLessonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnLessonViewModel.swift; sourceTree = "<group>"; };
+		274240C82063B28100781534 /* TestCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DDF6EDDF7CF22869ED80821 /* Pods_BuildVocab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildVocab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7EC48564BBCBC561BCD8B8 /* Pods-BuildVocabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildVocabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildVocabUITests/Pods-BuildVocabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F72FCE38B111B9AD930E819 /* Pods-BuildVocabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildVocabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildVocabUITests/Pods-BuildVocabUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +141,7 @@
 		2742406C2062161200781534 /* BuildVocab */ = {
 			isa = PBXGroup;
 			children = (
+				274240BB20639FE300781534 /* Constants */,
 				274240AB20623CC700781534 /* Utilities */,
 				274240A72062395500781534 /* ResourceFiles */,
 				274240A4206237BB00781534 /* ViewModels */,
@@ -159,6 +177,8 @@
 		2742409B2062171600781534 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				274240BF2063A99000781534 /* LessonTestView */,
+				274240B42063894D00781534 /* LearnLessonView */,
 				2742409C2062171600781534 /* LessonsView */,
 			);
 			path = ViewControllers;
@@ -184,7 +204,9 @@
 		274240A4206237BB00781534 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				274240C42063AA2A00781534 /* LessonTestViewModel.swift */,
 				274240A5206237E800781534 /* LessonsViewModel.swift */,
+				274240C62063AA5800781534 /* LearnLessonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -208,6 +230,7 @@
 		274240AB20623CC700781534 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				274240AF2062F34200781534 /* ThirdParty */,
 				274240AC20623CC700781534 /* CSVWrapper */,
 			);
 			path = Utilities;
@@ -219,6 +242,57 @@
 				274240AD20623D0000781534 /* CSVWrapper.swift */,
 			);
 			path = CSVWrapper;
+			sourceTree = "<group>";
+		};
+		274240AF2062F34200781534 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				274240B02062F34200781534 /* CSVParser */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		274240B02062F34200781534 /* CSVParser */ = {
+			isa = PBXGroup;
+			children = (
+				274240B12062F34200781534 /* CSwiftV.h */,
+				274240B22062F34200781534 /* CSwiftV.swift */,
+			);
+			path = CSVParser;
+			sourceTree = "<group>";
+		};
+		274240B42063894D00781534 /* LearnLessonView */ = {
+			isa = PBXGroup;
+			children = (
+				274240B52063896600781534 /* LearnLessonViewController.swift */,
+				274240B920639BEF00781534 /* WordCardCell.swift */,
+			);
+			path = LearnLessonView;
+			sourceTree = "<group>";
+		};
+		274240BB20639FE300781534 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				274240BC20639FF200781534 /* AppConstants */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		274240BC20639FF200781534 /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				274240BD2063A00300781534 /* Constants.swift */,
+			);
+			path = AppConstants;
+			sourceTree = "<group>";
+		};
+		274240BF2063A99000781534 /* LessonTestView */ = {
+			isa = PBXGroup;
+			children = (
+				274240C82063B28100781534 /* TestCardCollectionViewCell.swift */,
+				274240C22063A9DF00781534 /* LessonTestViewController.swift */,
+			);
+			path = LessonTestView;
 			sourceTree = "<group>";
 		};
 		2C366F76EDDB8CED7A905273 /* Frameworks */ = {
@@ -527,11 +601,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2742409E2062175100781534 /* LessonsViewController.swift in Sources */,
+				274240B32062F34200781534 /* CSwiftV.swift in Sources */,
 				274240A0206233E600781534 /* LessonCell.swift in Sources */,
+				274240BA20639BEF00781534 /* WordCardCell.swift in Sources */,
+				274240C92063B28100781534 /* TestCardCollectionViewCell.swift in Sources */,
 				2742406E2062161200781534 /* AppDelegate.swift in Sources */,
 				274240A6206237E800781534 /* LessonsViewModel.swift in Sources */,
 				274240AE20623D0000781534 /* CSVWrapper.swift in Sources */,
+				274240C72063AA5900781534 /* LearnLessonViewModel.swift in Sources */,
 				274240A32062347900781534 /* Lesson.swift in Sources */,
+				274240C52063AA2A00781534 /* LessonTestViewModel.swift in Sources */,
+				274240C32063A9DF00781534 /* LessonTestViewController.swift in Sources */,
+				274240BE2063A00300781534 /* Constants.swift in Sources */,
+				274240B62063896600781534 /* LearnLessonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,20 +7,29 @@
 //
 
 import UIKit
-import CSVImporter
+
 class CSVWrapper: NSObject {
-    func fetchLesson(lessonNum:Int){
+    class func fetchLessonCSVContent(lessonNum:Int)->CSwiftV?{
         
-        let path = "ResourceFiles/Lessons/Lesson\(lessonNum)"
-        let importer = CSVImporter<[String]>(path: path)
-        //let importer = CSVImporter.init(path: path, delimiter: ";", lineEnding: .newLine, encoding: .utf8, workQosClass: .default, callbacksQosClass: nil)
-        
-        importer.startImportingRecords { $0 }.onFinish { importedRecords in
-            for record in importedRecords {
-                // record is of type [String] and contains all data in a line
-            }
+        //let path = "ResourceFiles/Lessons/Lesson\(lessonNum)"
+        guard let filepath = Bundle.main.path(forResource: "Lesson\(lessonNum)", ofType: "csv")
+            else {
+                return nil
+        }
+        do {
+            let contents = try String(contentsOfFile: filepath, encoding: .utf8)
+            let csv = CSwiftV(with: contents)
+            return csv
+            
+        } catch {
+            print("File Read Error for file \(filepath)")
+            return nil
         }
     }
+    
+    /**
+     Returns a list of all the CSV lesson files
+     */
     class func fetchLessonFileNames()->[String]?{
         if let resourcePath = Bundle.main.resourcePath{
             let fileManager = FileManager.default
@@ -38,8 +47,32 @@ class CSVWrapper: NSObject {
         return nil
     }
     class func fetchLessonLearningStatus(lesson:Lesson) -> (total:Int,mastered:Int){
-        
-        
+        if let lessonID = lesson.id{
+            if let csv = fetchLessonCSVContent(lessonNum: lessonID){
+                let rows = csv.rows
+                let headers = csv.headers
+                lesson.name = headers[3]
+                //let keyedRows = csv.keyedRows
+                var masteredLessons = 0
+                for row in rows{
+                    if Int(row[2]) == 4{
+                        masteredLessons += 1
+                    }
+                }
+                return (total:rows.count,mastered:masteredLessons)
+            }
+        }
         return (total:10,mastered:1)
+    }
+    class func initializeWordsForLesson(lesson:Lesson){
+        if let lessonID = lesson.id{
+            if let csv = fetchLessonCSVContent(lessonNum: lessonID){
+                let rows = csv.rows
+                lesson.words = []
+                for row in rows{
+                    lesson.words?.append((word: row[0], translation: row[1]))
+                }
+            }
+        }
     }
 }

@@ -41,7 +41,15 @@ extension LessonsViewController:UITableViewDelegate,UITableViewDataSource{
         return 180
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "lessonLearnView", sender: lessonsViewModel.lessons[indexPath.row])
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "lessonLearnView"{
+            if let learnLessonVC = segue.destination as? LearnLessonViewController{
+                learnLessonVC.learnLessonViewModel = LearnLessonViewModel.init(lesson: sender as! Lesson)
+            }
+        }
     }
 }
 
