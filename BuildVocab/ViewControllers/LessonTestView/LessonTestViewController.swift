@@ -28,6 +28,23 @@ class LessonTestViewController: UIViewController {
     private func initializeViewComponents(){
         testCardsView.collectionViewLayout = CardsCollectionViewLayout()
         self.title = lessonTestViewModel?.lessonTitle()
+        self.navigationItem.backBarButtonItem?.title = ""
     }
 
 }
+//MARK:-
+extension LessonTestViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TestCardCollectionViewCell
+        if let questions = lessonTestViewModel?.questions{
+            cell.question = questions[indexPath.row]
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return lessonTestViewModel?.questions?.count ?? 0
+    }
+}
+
+

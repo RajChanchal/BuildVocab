@@ -15,7 +15,7 @@ class LearnLessonViewModel: NSObject {
     }
     init(lesson:Lesson) {
         self.lesson = lesson
-        lesson.initializeWords() //To save memory, we only initialize words when they are needed
+        lesson.initializeWords(shouldIgnoreMasteredWords: false) //To save memory, we only initialize words when they are needed
     }
     
     func removeLessonWords(){
@@ -23,5 +23,14 @@ class LearnLessonViewModel: NSObject {
     }
     func lessonTitle()->String?{
         return self.lesson?.name
+    }
+    func vocabAtIndex(index:Int)->Vocab?{
+        if let words = self.lesson?.words{
+            return words[index]
+        }
+        return nil
+    }
+    func totalNumberOfWords()->Int?{
+        return self.lesson?.words?.count
     }
 }

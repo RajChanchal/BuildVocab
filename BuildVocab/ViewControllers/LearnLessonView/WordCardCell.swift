@@ -20,4 +20,11 @@ class WordCardCell: UICollectionViewCell {
             lblTranslation.text = vocab?.translation
         }
     }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 7.0
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1.0
+    }
 }

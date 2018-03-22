@@ -259,7 +259,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SkipLesson:" destination="sFl-Sg-Z3K" eventType="touchUpInside" id="qDm-c0-X6d"/>
-                                    <segue destination="Dmb-xV-kpI" kind="show" id="aEr-5k-vaM"/>
+                                    <segue destination="Dmb-xV-kpI" kind="show" identifier="lessonTest" id="aEr-5k-vaM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -326,21 +326,11 @@
                                                         <constraint firstItem="3be-Ea-Pb2" firstAttribute="centerY" secondItem="vek-OA-efU" secondAttribute="centerY" id="btn-rK-eM8"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGV-Uc-gjW">
-                                                    <rect key="frame" x="0.0" y="314" width="250" height="50"/>
-                                                    <color key="backgroundColor" red="0.019607843140000001" green="0.68235294120000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="vNg-1D-i1b"/>
-                                                    </constraints>
-                                                    <state key="normal" title="SKIP">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eGj-YQ-PCM">
-                                                    <rect key="frame" x="5" y="77" width="240" height="230"/>
+                                                    <rect key="frame" x="5" y="77" width="240" height="187"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OYJ-07-7Sm">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="OYJ-07-7Sm">
                                                             <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OYJ-07-7Sm" id="Hy7-W8-Wj7">
@@ -349,27 +339,72 @@
                                                             </tableViewCellContentView>
                                                         </tableViewCell>
                                                     </prototypes>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="JJK-1O-BMb" id="xED-gA-ERN"/>
+                                                        <outlet property="delegate" destination="JJK-1O-BMb" id="1vc-fr-cw0"/>
+                                                    </connections>
                                                 </tableView>
+                                                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfg-we-Sfe">
+                                                    <rect key="frame" x="0.0" y="70" width="250" height="294"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGV-Uc-gjW">
+                                                            <rect key="frame" x="0.0" y="244" width="250" height="50"/>
+                                                            <color key="backgroundColor" red="0.019607843140000001" green="0.68235294120000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="vNg-1D-i1b"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                            <state key="normal" title="SKIP">
+                                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="btnSkipAction:" destination="JJK-1O-BMb" eventType="touchUpInside" id="Jsl-2T-IYK"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODY-2v-8Aq">
+                                                            <rect key="frame" x="65.5" y="96" width="119.5" height="42"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="MGV-Uc-gjW" secondAttribute="trailing" id="95C-fw-sJH"/>
+                                                        <constraint firstItem="ODY-2v-8Aq" firstAttribute="centerX" secondItem="xfg-we-Sfe" secondAttribute="centerX" id="Zv5-em-YhX"/>
+                                                        <constraint firstItem="ODY-2v-8Aq" firstAttribute="centerY" secondItem="xfg-we-Sfe" secondAttribute="centerY" constant="-30" id="chz-ow-d7B"/>
+                                                        <constraint firstAttribute="bottom" secondItem="MGV-Uc-gjW" secondAttribute="bottom" id="ged-df-VaL"/>
+                                                        <constraint firstItem="MGV-Uc-gjW" firstAttribute="leading" secondItem="xfg-we-Sfe" secondAttribute="leading" id="lhM-4A-QP2"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="MGV-Uc-gjW" secondAttribute="bottom" id="0UZ-Hg-CJT"/>
                                             <constraint firstItem="vek-OA-efU" firstAttribute="top" secondItem="JJK-1O-BMb" secondAttribute="top" id="3h1-an-w8B"/>
-                                            <constraint firstItem="MGV-Uc-gjW" firstAttribute="leading" secondItem="JJK-1O-BMb" secondAttribute="leading" id="9tb-JD-F4o"/>
-                                            <constraint firstItem="MGV-Uc-gjW" firstAttribute="top" secondItem="eGj-YQ-PCM" secondAttribute="bottom" constant="7" id="MNU-9T-pg9"/>
+                                            <constraint firstAttribute="bottom" secondItem="eGj-YQ-PCM" secondAttribute="bottom" constant="100" id="Fis-TF-iOD"/>
+                                            <constraint firstItem="xfg-we-Sfe" firstAttribute="leading" secondItem="JJK-1O-BMb" secondAttribute="leading" id="TUn-ZT-6E6"/>
+                                            <constraint firstItem="xfg-we-Sfe" firstAttribute="top" secondItem="vek-OA-efU" secondAttribute="bottom" id="bBB-s0-4nG"/>
                                             <constraint firstItem="eGj-YQ-PCM" firstAttribute="leading" secondItem="JJK-1O-BMb" secondAttribute="leading" constant="5" id="hcj-bf-9xl"/>
                                             <constraint firstAttribute="trailing" secondItem="eGj-YQ-PCM" secondAttribute="trailing" constant="5" id="oW6-sK-u4w"/>
                                             <constraint firstItem="eGj-YQ-PCM" firstAttribute="top" secondItem="vek-OA-efU" secondAttribute="bottom" constant="7" id="oZt-6D-n7b"/>
+                                            <constraint firstAttribute="bottom" secondItem="xfg-we-Sfe" secondAttribute="bottom" id="sJg-C5-PG1"/>
                                             <constraint firstItem="vek-OA-efU" firstAttribute="leading" secondItem="JJK-1O-BMb" secondAttribute="leading" id="tO6-rn-hqi"/>
                                             <constraint firstItem="vek-OA-efU" firstAttribute="height" secondItem="JJK-1O-BMb" secondAttribute="height" multiplier="0.192" id="vYX-xH-Utz"/>
-                                            <constraint firstAttribute="trailing" secondItem="MGV-Uc-gjW" secondAttribute="trailing" id="xFA-Xg-PfH"/>
                                             <constraint firstAttribute="trailing" secondItem="vek-OA-efU" secondAttribute="trailing" id="xos-rN-y5k"/>
+                                            <constraint firstAttribute="trailing" secondItem="xfg-we-Sfe" secondAttribute="trailing" id="zfg-LP-6lO"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="btnSkip" destination="MGV-Uc-gjW" id="bXh-Qh-NmC"/>
+                                            <outlet property="lblInstructions" destination="ODY-2v-8Aq" id="CYI-wQ-O1l"/>
+                                            <outlet property="lblWord" destination="3be-Ea-Pb2" id="zqB-xh-HfZ"/>
+                                            <outlet property="tblView" destination="eGj-YQ-PCM" id="wBH-9x-g23"/>
+                                            <outlet property="viewPrompt" destination="xfg-we-Sfe" id="Z7E-F2-urp"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="sFl-Sg-Z3K" id="9XA-yY-ekl"/>
-                                    <outlet property="delegate" destination="sFl-Sg-Z3K" id="g7w-gl-YhI"/>
+                                    <outlet property="dataSource" destination="Dmb-xV-kpI" id="xcI-kE-L7D"/>
+                                    <outlet property="delegate" destination="Dmb-xV-kpI" id="Yxe-5h-cjQ"/>
                                 </connections>
                             </collectionView>
                         </subviews>

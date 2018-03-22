@@ -21,24 +21,32 @@ class LearnLessonViewController: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        learnLessonViewModel?.removeLessonWords()
+        //learnLessonViewModel?.removeLessonWords()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     //MARK:- Action Methods
     @IBAction func SkipLesson(_ sender: Any) {
         
     }
+    
+    
     //MARK:- Miscellaneous Methods
     private func initializeViewComponents(){
         wordCardsView.collectionViewLayout = CardsCollectionViewLayout()
         self.title = learnLessonViewModel?.lessonTitle()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "testView"{
-            
+        if segue.identifier == "lessonTest"{
+            if let lessonTestVC = segue.destination as? LessonTestViewController{
+                if let lesson = learnLessonViewModel?.lesson{
+                    lessonTestVC.lessonTestViewModel = LessonTestViewModel.init(lesson:lesson)
+                }
+                
+            }
         }
     }
 }
@@ -48,16 +56,12 @@ extension LearnLessonViewController:UICollectionViewDelegate,UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WordCardCell
-        cell.vocab = learnLessonViewModel?.lesson?.words![indexPath.row]
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 7.0
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1.0
+        cell.vocab = learnLessonViewModel?.vocabAtIndex(index: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return learnLessonViewModel?.lesson?.words?.count ?? 0
+        return learnLessonViewModel?.totalNumberOfWords() ?? 0
     }
     
     

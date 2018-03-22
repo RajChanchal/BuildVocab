@@ -55,7 +55,7 @@ class CSVWrapper: NSObject {
                 //let keyedRows = csv.keyedRows
                 var masteredLessons = 0
                 for row in rows{
-                    if Int(row[2]) == 4{
+                    if Int(row[2]) == Constants.common.wordMasterLimit{
                         masteredLessons += 1
                     }
                 }
@@ -64,13 +64,18 @@ class CSVWrapper: NSObject {
         }
         return (total:10,mastered:1)
     }
-    class func initializeWordsForLesson(lesson:Lesson){
+    class func initializeWordsForLesson(lesson:Lesson,ignoreMastered:Bool){
         if let lessonID = lesson.id{
             if let csv = fetchLessonCSVContent(lessonNum: lessonID){
                 let rows = csv.rows
                 lesson.words = []
-                for row in rows{
-                    lesson.words?.append((word: row[0], translation: row[1]))
+                for (index,row) in rows.enumerated(){
+                    if ignoreMastered && Int(row[2]) == Constants.common.wordMasterLimit{
+                        
+                        continue
+                    }
+                    let word = Vocab.init(id: index+1, word: row[0], translation: row[1])
+                    lesson.words?.append(word)
                 }
             }
         }

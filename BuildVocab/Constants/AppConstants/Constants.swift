@@ -7,7 +7,10 @@
 //
 
 import UIKit
-typealias Vocab = (word:String,translation:String)
+//typealias Vocab = (word:String,translation:String)
 class Constants:NSObject{
-    
+    struct common {
+        static let wordMasterLimit = 4
+        static let totalOptionsInQuestion = 3
+    }
 }

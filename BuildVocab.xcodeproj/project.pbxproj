@@ -27,6 +27,8 @@
 		274240C52063AA2A00781534 /* LessonTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C42063AA2A00781534 /* LessonTestViewModel.swift */; };
 		274240C72063AA5900781534 /* LearnLessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C62063AA5800781534 /* LearnLessonViewModel.swift */; };
 		274240C92063B28100781534 /* TestCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240C82063B28100781534 /* TestCardCollectionViewCell.swift */; };
+		274240CB2063D3E600781534 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240CA2063D3E600781534 /* Vocab.swift */; };
+		274240CF206429CA00781534 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274240CE206429C900781534 /* Question.swift */; };
 		CFA8A3B7E61F7FEFB6B60414 /* Pods_BuildVocabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013D422A2B88A98C30C4D17C /* Pods_BuildVocabTests.framework */; };
 		DB0CF981774B29B82E538D30 /* Pods_BuildVocab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDF6EDDF7CF22869ED80821 /* Pods_BuildVocab.framework */; };
 		EF59AE5C07DE44C694237EF5 /* Pods_BuildVocabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F5D130BCF26504ED0710B /* Pods_BuildVocabUITests.framework */; };
@@ -78,6 +80,8 @@
 		274240C42063AA2A00781534 /* LessonTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTestViewModel.swift; sourceTree = "<group>"; };
 		274240C62063AA5800781534 /* LearnLessonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnLessonViewModel.swift; sourceTree = "<group>"; };
 		274240C82063B28100781534 /* TestCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		274240CA2063D3E600781534 /* Vocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocab.swift; sourceTree = "<group>"; };
+		274240CE206429C900781534 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3DDF6EDDF7CF22869ED80821 /* Pods_BuildVocab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BuildVocab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E7EC48564BBCBC561BCD8B8 /* Pods-BuildVocabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildVocabUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuildVocabUITests/Pods-BuildVocabUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9F72FCE38B111B9AD930E819 /* Pods-BuildVocabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuildVocabUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuildVocabUITests/Pods-BuildVocabUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,7 +200,9 @@
 		274240A12062346500781534 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				274240CE206429C900781534 /* Question.swift */,
 				274240A22062347900781534 /* Lesson.swift */,
+				274240CA2063D3E600781534 /* Vocab.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 			files = (
 				2742409E2062175100781534 /* LessonsViewController.swift in Sources */,
 				274240B32062F34200781534 /* CSwiftV.swift in Sources */,
+				274240CF206429CA00781534 /* Question.swift in Sources */,
 				274240A0206233E600781534 /* LessonCell.swift in Sources */,
 				274240BA20639BEF00781534 /* WordCardCell.swift in Sources */,
 				274240C92063B28100781534 /* TestCardCollectionViewCell.swift in Sources */,
@@ -611,6 +618,7 @@
 				274240C72063AA5900781534 /* LearnLessonViewModel.swift in Sources */,
 				274240A32062347900781534 /* Lesson.swift in Sources */,
 				274240C52063AA2A00781534 /* LessonTestViewModel.swift in Sources */,
+				274240CB2063D3E600781534 /* Vocab.swift in Sources */,
 				274240C32063A9DF00781534 /* LessonTestViewController.swift in Sources */,
 				274240BE2063A00300781534 /* Constants.swift in Sources */,
 				274240B62063896600781534 /* LearnLessonViewController.swift in Sources */,

@@ -23,8 +23,8 @@ class Lesson: NSObject {
         }
         
     }
-    func initializeWords(){
-        CSVWrapper.initializeWordsForLesson(lesson: self)
+    func initializeWords(shouldIgnoreMasteredWords:Bool){
+        CSVWrapper.initializeWordsForLesson(lesson: self, ignoreMastered: shouldIgnoreMasteredWords)
     }
     func removeWords(){
         self.words = nil

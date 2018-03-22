@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BuildVocab/ViewModels/LessonsViewModel.swift"
-            timestampString = "543401229.687453"
+            timestampString = "543437738.1704839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BuildVocab/Utilities/CSVWrapper/CSVWrapper.swift"
-            timestampString = "543401229.687592"
+            filePath = "BuildVocab/ViewControllers/LessonTestView/TestCardCollectionViewCell.swift"
+            timestampString = "543437738.17082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "fetchLessonLearningStatus(lesson:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "updateSkipButton()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
