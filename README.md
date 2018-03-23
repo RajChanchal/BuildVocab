@@ -13,15 +13,16 @@ The count in the third column is calculated as follows:
 +1 -> the user entered the correct translation 
 -1 -> the user entered a wrong word
 
-### New Features Handling
-**Support a list of lessons:** Although one lesson was asked in the given task instructions, the code supports adding many lessons.
-**GUI Improvements:** GUI is improved
+### New Features Handling:
+* **Support a list of lessons:** Although one lesson was asked in the given task instructions, the code supports adding many lessons.
 
-### Coding Pattern
+* **GUI Improvements:** GUI is improved
+
+### Coding Pattern:
 MMVM Design Pattern is used for this project causing not an incuring of Masive View Controllers
 
-### Assumptions
+### Assumptions:
 All CSV files will be added with file names like: Lesson1.csv, Lesson2.csv
 
-### To be Done
+### To be Done:
 Currently the app doesn't write on CSV files, so the status of scores is not updated, if given 2 more hours, it will be done as well.
