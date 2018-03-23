@@ -96,10 +96,63 @@ class CSVWrapper: NSObject {
         }
     }
     /**
+        Reset a lessons scores to 0
+     */
+    class func resetLessonScores(lesson:Lesson){
+        if let lessonId = lesson.id{
+            if let csv = fetchLessonCSVContent(lessonNum: lessonId){
+                for index in csv.rows.indices{
+                    var row = csv.rows[index]
+                    row[2] = "0"
+                    csv.rows[index] = row
+                }
+                let updatedContent = csv.toString()
+                let _ = self.writeStringToFile(lessonNum: lessonId, string: updatedContent)
+            }
+        }
+    }
+    /**
         Updates the CSV file after a score of a word is either increased or decreased
- 
     */
-    class func updateLessonFile(lesson:Lesson,wordIndex:Int,isCorrect:Bool){
-        //Couldn't do it in given time - but will do.
+    class func updateLesson(lesson:Lesson,updatedWord:String,isCorrect:Bool){
+        if let lessonId = lesson.id{
+            if let csv = fetchLessonCSVContent(lessonNum: lessonId){
+                for index in csv.rows.indices{
+                    var row = csv.rows[index]
+                    if row[0] == updatedWord{
+                        if let oldScoreValue = Int(row[2]){
+                            if isCorrect{
+                                let newValue = oldScoreValue + 1
+                                row[2] = String(newValue)
+                            }else{
+                                let newValue = oldScoreValue - 1
+                                row[2] = String(newValue)
+                            }
+                            csv.rows[index] = row
+                            break
+                        }
+                    }
+                }
+                let updatedContent = csv.toString()
+                print("Updated file: \(updatedContent)")
+                let _ = self.writeStringToFile(lessonNum: lessonId, string: updatedContent)
+                //Write to lesson file
+            }
+            
+        }
+    }
+    internal class func writeStringToFile(lessonNum:Int,string:String) -> Bool{
+        guard let filepath = Bundle.main.path(forResource: "Lesson\(lessonNum)", ofType: "csv")
+            else {
+                return false
+        }
+        do {
+            try string.write(toFile: filepath, atomically: true, encoding: .utf8)
+            return true
+            
+        } catch{
+            print("File Write Error for file \(filepath)")
+            return false
+        }
     }
 }

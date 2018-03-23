@@ -30,7 +30,7 @@ public class CSwiftV {
     /// An array of Dictionaries with the values of each row keyed to the header
     public let keyedRows: [[String: String]]?
     // An Array of the rows in an Array of String form, equivalent to keyedRows, but without the keys
-    public let rows: [[String]]
+    public var rows: [[String]]
     
     /// Creates an instance containing the data extracted from the `with` String
     /// - Parameter with: The String obtained from reading the csv file.
@@ -103,5 +103,32 @@ public class CSwiftV {
         }
         return merged
     }
-
+}
+extension CSwiftV{
+    func toString()->String{
+        var string = ""
+        //Populate Headers
+        for (index,header) in self.headers.enumerated(){
+            if index == 0{
+                string = header
+            }else{
+                string = "\(string);\(header)"
+            }
+        }
+        string = "\(string)\n"
+        //Populate rows
+        for row in self.rows{
+            for (index,column) in row.enumerated(){
+                if index == 0{
+                    string = "\(string)\(column)"
+                }else{
+                    string = "\(string);\(column)"
+                }
+            }
+            //next row
+            string = "\(string)\n"
+        }
+        return string
+    }
+    
 }

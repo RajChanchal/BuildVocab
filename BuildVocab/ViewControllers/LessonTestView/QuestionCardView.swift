@@ -80,10 +80,12 @@ extension QuestionCardView:UITableViewDelegate,UITableViewDataSource{
             lblInstructions.text = "Correct"
             Question.QuestionsStatus.correct += 1
             self.viewPrompt.backgroundColor = Constants.colors.correctOption
+            CSVWrapper.updateLesson(lesson: self.question.lesson, updatedWord: self.question.vocab.word!, isCorrect: true)
         }else{
             lblInstructions.text = "Incorrect"
             Question.QuestionsStatus.wrong += 1
             self.viewPrompt.backgroundColor = Constants.colors.incorrectOption
+            CSVWrapper.updateLesson(lesson: self.question.lesson, updatedWord: self.question.vocab.word!, isCorrect: false)
         }
         self.question?.isAnswered = true
         UIView.animate(withDuration: 1.0) {

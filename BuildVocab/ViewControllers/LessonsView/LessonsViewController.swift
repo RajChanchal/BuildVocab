@@ -21,7 +21,11 @@ class LessonsViewController: UIViewController {
         
         tblView.tableFooterView = UIView.init(frame: CGRect.zero)
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lessonsViewModel.repopulateLessons()
+        tblView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

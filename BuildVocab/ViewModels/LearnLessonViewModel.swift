@@ -14,8 +14,10 @@ class LearnLessonViewModel: NSObject {
         
     }
     init(lesson:Lesson) {
+        super.init()
         self.lesson = lesson
         lesson.initializeWords(shouldIgnoreMasteredWords: false) //To save memory, we only initialize words when they are needed
+        self.resetScoresIfNeeded()
     }
     
     func removeLessonWords(){
@@ -32,5 +34,14 @@ class LearnLessonViewModel: NSObject {
     }
     func totalNumberOfWords()->Int?{
         return self.lesson?.words?.count
+    }
+    func resetScoresIfNeeded(){
+        if let lesson = self.lesson{
+            let learningStatus = CSVWrapper.fetchLessonLearningStatus(lesson: lesson)
+            if learningStatus.total == learningStatus.mastered{
+                //Because replaying is chosen, reset this lessons scores to 0
+                CSVWrapper.resetLessonScores(lesson: lesson)
+            }
+        }
     }
 }

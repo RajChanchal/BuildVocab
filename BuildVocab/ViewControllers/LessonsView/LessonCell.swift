@@ -34,6 +34,11 @@ class LessonCell: UITableViewCell {
         let lessonLearningStatus = CSVWrapper.fetchLessonLearningStatus(lesson: lesson)
         progressBar.progress = Float(lessonLearningStatus.mastered)/Float(lessonLearningStatus.total)
         lblLessonStatus.text = "\(lessonLearningStatus.mastered) out of \(lessonLearningStatus.total) words mastered"
-        lblLessonActionTitle.text = "Lets study lesson \(lessonNum)"
+        if lessonLearningStatus.mastered == lessonLearningStatus.total{
+            lblLessonActionTitle.text = "Replay lesson \(lessonNum)"
+        }else{
+            lblLessonActionTitle.text = "Lets study lesson \(lessonNum)"
+        }
+        
     }
 }

@@ -13,10 +13,10 @@ class LessonsViewModel: NSObject {
     override init() {
         super.init()
         self.lessons = [Lesson]()
-        self.populateLessons()
     }
     
-    private func populateLessons(){
+    func repopulateLessons(){
+        self.lessons = [Lesson]()
         if let lessonFiles = CSVWrapper.fetchLessonFileNames(){
             print("numbers: \(lessonFiles)")
             for lessonFileName in lessonFiles{
@@ -25,5 +25,4 @@ class LessonsViewModel: NSObject {
             }
         }
     }
-    
 }

@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BuildVocab/ViewModels/LessonsViewModel.swift"
-            timestampString = "543483539.389416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "LessonsViewModel"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BuildVocab/Models/Lesson.swift"
             timestampString = "543483539.390969"
             startingColumnNumber = "9223372036854775807"
@@ -57,13 +41,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BuildVocab/ViewModels/LessonTestViewModel.swift"
-            timestampString = "543483539.391582"
+            filePath = "BuildVocab/ViewControllers/LessonsView/LessonCell.swift"
+            timestampString = "543496696.883226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "initializeQuestions()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "populateLessonData(lesson:lessonNum:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BuildVocab/ViewControllers/LessonsView/LessonsViewController.swift"
+            timestampString = "543496696.883297"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,12 +74,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BuildVocab/Utilities/CSVWrapper/CSVWrapper.swift"
-            timestampString = "543483539.397162"
+            timestampString = "543496696.8833669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "initializeWordsForLesson(lesson:ignoreMastered:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "fetchLessonLearningStatus(lesson:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BuildVocab/Utilities/CSVWrapper/CSVWrapper.swift"
+            timestampString = "543496696.883419"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "fetchLessonCSVContent(lessonNum:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
