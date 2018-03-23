@@ -25,4 +25,4 @@ MMVM Design Pattern is used for this project causing not an incuring of Masive V
 All CSV files will be added with file names like: Lesson1.csv, Lesson2.csv
 
 ### To be Done:
-Currently the app doesn't write on CSV files, so the status of scores is not updated, if given 2 more hours, it will be done as well.
+Currently no test cases are written, if given some more time, they will be added as well.
