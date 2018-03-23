@@ -2,8 +2,8 @@
 //  CSwiftVIOS.h
 //  CSwiftVIOS
 //
-//  Created by Daniel Haight on 04/05/2015.
-//  Copyright (c) 2015 ManyThings. All rights reserved.
+//  Created by ChanchalRaj on 21/03/2018.
+//  Copyright © 2018 Avira Corporation. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

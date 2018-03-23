@@ -59,11 +59,18 @@ class CSVWrapper: NSObject {
                         masteredLessons += 1
                     }
                 }
+            
                 return (total:rows.count,mastered:masteredLessons)
             }
         }
         return (total:10,mastered:1)
     }
+    
+    /**
+     Initalize Words list related to a lesson.
+     - parameter lesson: lesson that needs its words
+     - parameter ignoreMastered: Whether the initialized list have mastered words or not
+     */
     class func initializeWordsForLesson(lesson:Lesson,ignoreMastered:Bool){
         if let lessonID = lesson.id{
             if let csv = fetchLessonCSVContent(lessonNum: lessonID){
@@ -79,5 +86,8 @@ class CSVWrapper: NSObject {
                 }
             }
         }
+    }
+    class func updateLessonFile(lesson:Lesson,wordIndex:Int,isCorrect:Bool){
+        
     }
 }

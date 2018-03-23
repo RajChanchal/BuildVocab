@@ -1,12 +1,21 @@
 PODS:
   - CardsLayout (0.0.1)
+  - FCAlertView (1.4.0)
+  - Koloda (4.3.1):
+    - pop (~> 1.0)
+  - pop (1.0.10)
 
 DEPENDENCIES:
   - CardsLayout
+  - FCAlertView
+  - Koloda
 
 SPEC CHECKSUMS:
   CardsLayout: ceeb8f9c26319b47a2f0995ea4590cf7ba881462
+  FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
+  Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
 
-PODFILE CHECKSUM: 9970a5a3f863861073dafd52f882cdb1246b2366
+PODFILE CHECKSUM: c8b38b2883a01239da4e2d714fb75ee83afb72dd
 
 COCOAPODS: 1.2.0

@@ -9,7 +9,7 @@
 import UIKit
 
 class LessonTestViewModel: NSObject {
-    private var lesson:Lesson?
+    var lesson:Lesson?
     var questions:[Question]?
     private override init(){
         

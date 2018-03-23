@@ -7,22 +7,32 @@
 //
 
 import UIKit
-
+protocol TestCardCollectionViewCellDelegate {
+    func nextButtonPressed(cell:TestCardCollectionViewCell)
+    func summaryButtonPressed(cell:TestCardCollectionViewCell)
+}
 class TestCardCollectionViewCell: UICollectionViewCell {
+    //MARK:- View Components
+    @IBOutlet private weak var lblWord: UILabel!
+    @IBOutlet private weak var tblView: UITableView!
+    @IBOutlet private weak var lblInstructions: UILabel!
+    @IBOutlet private weak var btnSkip: UIButton!
+    @IBOutlet private weak var viewPrompt: UIView!
     
-    @IBOutlet weak var lblWord: UILabel!
-    @IBOutlet weak var tblView: UITableView!
-    @IBOutlet weak var lblInstructions: UILabel!
-    @IBOutlet weak var btnSkip: UIButton!
-    @IBOutlet weak var viewPrompt: UIView!
+    //MARK:- Instance properties
     var question:Question!{
         didSet{
             lblWord.text = question?.vocab.word
             viewPrompt.alpha = question.isAnswered ? 1 : 0
+            updateSkipButton()
         }
     }
+    var delegate:TestCardCollectionViewCellDelegate?
+    //MARK:- Action Methods
     @IBAction func btnSkipAction(_ sender: Any) {
-        
+        if let delegate = self.delegate{
+            isLastWord() ? delegate.summaryButtonPressed(cell: self) : delegate.nextButtonPressed(cell: self)
+        }
     }
     
     override func awakeFromNib() {
@@ -32,7 +42,6 @@ class TestCardCollectionViewCell: UICollectionViewCell {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1.0
         tblView.tableFooterView = UIView.init(frame: CGRect.zero)
-        updateSkipButton()
     }
 }
 
@@ -42,7 +51,7 @@ extension TestCardCollectionViewCell:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = question?.options[indexPath.row].translation
         return cell!
     }
@@ -51,10 +60,12 @@ extension TestCardCollectionViewCell:UITableViewDelegate,UITableViewDataSource{
         if self.question?.vocab.id == selectedOption?.id{
             //Correct
             lblInstructions.text = "Correct"
-            self.viewPrompt.backgroundColor = UIColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.7)
+            Question.correct += 1
+            self.viewPrompt.backgroundColor = Constants.colors.correctOption
         }else{
             lblInstructions.text = "Incorrect"
-            self.viewPrompt.backgroundColor = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7)
+            Question.wrong += 1
+            self.viewPrompt.backgroundColor = Constants.colors.incorrectOption
         }
         self.question?.isAnswered = true
         UIView.animate(withDuration: 1.0) {
@@ -62,11 +73,14 @@ extension TestCardCollectionViewCell:UITableViewDelegate,UITableViewDataSource{
         }
     }
     private func updateSkipButton(){
-        if self.question?.lesson.words?.last?.id == self.question?.vocab.id{
+        if isLastWord(){
             //It means it's the last word
             btnSkip.setTitle("View Summary", for: .normal)
         }else{
             btnSkip.setTitle("Next", for: .normal)
         }
+    }
+    private func isLastWord()->Bool{
+        return self.question?.lesson.words?.last?.id == self.question?.vocab.id
     }
 }

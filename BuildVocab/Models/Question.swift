@@ -19,4 +19,12 @@ class Question: NSObject {
         self.options = options
         isAnswered = false
     }
+    static var correct = 0
+    static var wrong = 0
+    static var skipped = 0
+    static func clearTestStatus(){
+        correct = 0
+        wrong = 0
+        skipped = 0
+    }
 }

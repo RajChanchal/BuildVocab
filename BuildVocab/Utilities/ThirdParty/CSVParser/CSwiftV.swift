@@ -2,8 +2,8 @@
 //  CSwiftV.swift
 //  CSwiftV
 //
-//  Created by Daniel Haight on 30/08/2014.
-//  Copyright (c) 2014 ManyThings. All rights reserved.
+//  Created by ChanchalRaj on 21/03/2018.
+//  Copyright © 2018 Avira Corporation. All rights reserved.
 //
 
 import class Foundation.NSCharacterSet
@@ -59,14 +59,14 @@ public class CSwiftV {
     /// Creates an instance containing the data extracted from the `with` String
     /// - Parameter with: The string obtained from reading the csv file.
     /// - Parameter headers: The array of headers from the file. I f not included, it will be populated with the ones from the first line
-    /// - Attention: In this conveniennce initializer, we assume that the separator between fields is ","
+    /// - Attention: In this conveniennce initializer, we assume that the separator between fields is ";"
     public convenience init(with string: String, headers: [String]?) {
         self.init(with: string, separator:";", headers:headers)
     }
     
     /// Analizes a row and tries to obtain the different cells contained as an Array of String
     /// - Parameter forRow: The string corresponding to a row of the data matrix
-    /// - Parameter separator: The string that delimites the cells or fields inside the row. Defaults to ","
+    /// - Parameter separator: The string that delimites the cells or fields inside the row. Defaults to ";"
     internal static func cells(forRow string: String, separator: String = ";") -> [String] {
         return CSwiftV.split(separator, string: string).map { element in
             if let first = element.first, let last = element.last , first == "\"" && last == "\"" {

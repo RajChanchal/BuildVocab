@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BuildVocab/ViewModels/LessonsViewModel.swift"
-            timestampString = "543437738.1704839"
+            timestampString = "543470778.311578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BuildVocab/ViewControllers/LessonTestView/TestCardCollectionViewCell.swift"
-            timestampString = "543437738.17082"
+            filePath = "BuildVocab/Models/Lesson.swift"
+            timestampString = "543470778.311663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "updateSkipButton()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "removeWords()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BuildVocab/ViewControllers/LessonTestView/TestCardCollectionViewCell.swift"
+            timestampString = "543470778.312147"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "btnSkipAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
