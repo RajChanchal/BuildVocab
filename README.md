@@ -13,4 +13,3 @@ The count in the third column is calculated as follows:
 +1 -> the user entered the correct translation 
 -1 -> the user entered a wrong word
 
-At first, app shows the provided lesson:
