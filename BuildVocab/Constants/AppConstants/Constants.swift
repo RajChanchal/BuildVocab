@@ -14,7 +14,7 @@ class Constants:NSObject{
         static let totalOptionsInQuestion = 3
     }
     struct colors{
-        static let correctOption = UIColor.init(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.8)
-        static let incorrectOption = UIColor.init(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.8)
+        static let correctOption = UIColor.init(red: 75.0/255.0, green: 148.0/255.0, blue: 40.0/255.0, alpha: 1.0)
+        static let incorrectOption = UIColor.init(red: 173.0/255.0, green: 33.0/255.0, blue: 26.0/255.0, alpha: 1.0)
     }
 }

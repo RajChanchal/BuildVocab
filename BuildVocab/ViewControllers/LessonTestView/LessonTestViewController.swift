@@ -11,7 +11,6 @@ import CardsLayout
 import FCAlertView
 import Koloda
 class LessonTestViewController: UIViewController {
-    @IBOutlet weak var testCardsView: UICollectionView!
     @IBOutlet weak var viewQuestionCards: KolodaView!
     var lessonTestViewModel:LessonTestViewModel?
     override func viewDidLoad() {
@@ -28,10 +27,9 @@ class LessonTestViewController: UIViewController {
 
     //MARK:- Miscellaneous Methods
     private func initializeViewComponents(){
-        testCardsView.collectionViewLayout = CardsCollectionViewLayout()
-        testCardsView.allowsSelection = false
         viewQuestionCards.delegate = self
         viewQuestionCards.dataSource = self
+        viewQuestionCards.backgroundColor = .clear
         self.title = lessonTestViewModel?.lessonTitle()
         self.navigationItem.backBarButtonItem?.title = ""
     }

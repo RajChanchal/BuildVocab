@@ -76,12 +76,14 @@ class CSVWrapper: NSObject {
             if let csv = fetchLessonCSVContent(lessonNum: lessonID){
                 let rows = csv.rows
                 lesson.words = []
-                for (index,row) in rows.enumerated(){
+                var indexCount = 0
+                for row in rows{
                     if ignoreMastered && Int(row[2]) == Constants.common.wordMasterLimit{
                         
                         continue
                     }
-                    let word = Vocab.init(id: index+1, word: row[0], translation: row[1])
+                    indexCount += 1
+                    let word = Vocab.init(id: indexCount, word: row[0], translation: row[1])
                     lesson.words?.append(word)
                 }
             }

@@ -16,15 +16,14 @@ class WordCardCell: UICollectionViewCell {
     
     var vocab:Vocab?{
         didSet{
-            lblWord.text = vocab?.word
-            lblTranslation.text = vocab?.translation
+            lblWord.text = vocab?.word?.capitalized
+            lblTranslation.text = vocab?.translation?.capitalized
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .white
         self.layer.cornerRadius = 7.0
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 1.0
     }
 }
