@@ -46,6 +46,12 @@ class CSVWrapper: NSObject {
         }
         return nil
     }
+    
+    /**
+     Returns a tuple that indicates how many words in lessons are mastered completely and how many are left
+     - paramater lesson: Lesson for which the mastered words count is checked
+     - Returns: a tuple containing counts of total and mastered count of words
+     */
     class func fetchLessonLearningStatus(lesson:Lesson) -> (total:Int,mastered:Int){
         if let lessonID = lesson.id{
             if let csv = fetchLessonCSVContent(lessonNum: lessonID){
@@ -89,7 +95,11 @@ class CSVWrapper: NSObject {
             }
         }
     }
+    /**
+        Updates the CSV file after a score of a word is either increased or decreased
+ 
+    */
     class func updateLessonFile(lesson:Lesson,wordIndex:Int,isCorrect:Bool){
-        
+        //Couldn't do it in given time - but will do.
     }
 }

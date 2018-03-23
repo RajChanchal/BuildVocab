@@ -19,18 +19,18 @@ class LearnLessonViewController: UIViewController {
         self.initializeViewComponents()
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = learnLessonViewModel?.lessonTitle()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //learnLessonViewModel?.removeLessonWords()
+        self.navigationItem.title = " "
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    //MARK:- Action Methods
-    @IBAction func SkipLesson(_ sender: Any) {
-        
     }
     
     
@@ -53,7 +53,7 @@ class LearnLessonViewController: UIViewController {
 //MARK:-
 extension LearnLessonViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     
-    
+    //MARK:- Collection View Delegate Methods
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! WordCardCell
         cell.vocab = learnLessonViewModel?.vocabAtIndex(index: indexPath.row)

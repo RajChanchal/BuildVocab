@@ -9,17 +9,19 @@
 import UIKit
 
 class WordCardCell: UICollectionViewCell {
+    //MARK:- IBOutets
     @IBOutlet private weak var lblToLanguage: UILabel!
     @IBOutlet private weak var lblFromLanguage: UILabel!
     @IBOutlet private weak var lblWord: UILabel!
     @IBOutlet private weak var lblTranslation: UILabel!
-    
+    //MARK:- Instance Properties
     var vocab:Vocab?{
         didSet{
             lblWord.text = vocab?.word?.capitalized
             lblTranslation.text = vocab?.translation?.capitalized
         }
     }
+    //MARK:- View Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 7.0

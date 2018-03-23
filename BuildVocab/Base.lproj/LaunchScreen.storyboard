@@ -23,9 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="W3m-Hd-vQB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="W3m-Hd-vQB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vocab Builder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiq-1Z-CrO">
                                 <rect key="frame" x="98" y="315" width="178" height="37.5"/>
@@ -36,8 +35,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="W3m-Hd-vQB" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="F0r-vO-xit"/>
                             <constraint firstItem="yiq-1Z-CrO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ie8-aH-61i"/>
+                            <constraint firstItem="W3m-Hd-vQB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JhO-Gb-NHP"/>
+                            <constraint firstItem="W3m-Hd-vQB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q92-W9-Mjd"/>
                             <constraint firstItem="yiq-1Z-CrO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QWF-oY-vuY"/>
+                            <constraint firstItem="W3m-Hd-vQB" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="caG-nR-sBb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

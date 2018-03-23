@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func globalUIAppearance(){
         let BarButtonItemAppearance = UIBarButtonItem.appearance()
         BarButtonItemAppearance.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.clear], for: .normal)
+        
+        
     }
 
 }

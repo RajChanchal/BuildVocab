@@ -30,6 +30,14 @@ class QuestionCardView: OverlayView {
             updateSkipButton()
         }
     }
+    //MARK:- View Life Cycle
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.layer.cornerRadius = 7.0
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = 1.0
+        tblView.tableFooterView = UIView.init(frame: CGRect.zero)
+    }
     var delegate:QuestionCardViewDelegate?
     //MARK:- Action Methods
     @IBAction func btnSkipAction(_ sender: Any) {
@@ -38,20 +46,21 @@ class QuestionCardView: OverlayView {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.layer.cornerRadius = 7.0
-        self.layer.borderColor = UIColor.white.cgColor
-        self.layer.borderWidth = 1.0
-        tblView.tableFooterView = UIView.init(frame: CGRect.zero)
+    //MARK:- Miscellenioius Methods
+    private func updateSkipButton(){
+        if isLastWord(){
+            //It means it's the last word
+            btnSkip.setTitle("View Summary", for: .normal)
+        }else{
+            btnSkip.setTitle("Next", for: .normal)
+        }
     }
-
 }
 extension QuestionCardView:UITableViewDelegate,UITableViewDataSource{
+    //MARK:- TableView Delegate Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return question?.options.count ?? 0
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         if cell == nil{
@@ -69,24 +78,16 @@ extension QuestionCardView:UITableViewDelegate,UITableViewDataSource{
         if self.question?.vocab.id == selectedOption?.id{
             //Correct
             lblInstructions.text = "Correct"
-            Question.correct += 1
+            Question.QuestionsStatus.correct += 1
             self.viewPrompt.backgroundColor = Constants.colors.correctOption
         }else{
             lblInstructions.text = "Incorrect"
-            Question.wrong += 1
+            Question.QuestionsStatus.wrong += 1
             self.viewPrompt.backgroundColor = Constants.colors.incorrectOption
         }
         self.question?.isAnswered = true
         UIView.animate(withDuration: 1.0) {
             self.viewPrompt.alpha = 1
-        }
-    }
-    private func updateSkipButton(){
-        if isLastWord(){
-            //It means it's the last word
-            btnSkip.setTitle("View Summary", for: .normal)
-        }else{
-            btnSkip.setTitle("Next", for: .normal)
         }
     }
     private func isLastWord()->Bool{

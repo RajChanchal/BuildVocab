@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kil-e3-Slv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="UZh-eG-4Xb" customClass="LessonCell" customModule="BuildVocab" customModuleProvider="target">
@@ -125,10 +125,10 @@
                         <color key="backgroundColor" red="0.32549019610000002" green="0.14117647059999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QLW-FS-kza" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9EA-5n-KgP"/>
-                            <constraint firstItem="Kil-e3-Slv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CcA-jY-zFr"/>
                             <constraint firstItem="QLW-FS-kza" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ftv-LS-5ye"/>
                             <constraint firstItem="Kil-e3-Slv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="LZx-dG-4Os"/>
                             <constraint firstItem="Kil-e3-Slv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PKl-3v-tY0"/>
+                            <constraint firstItem="Kil-e3-Slv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cKf-79-Nn2"/>
                             <constraint firstItem="QLW-FS-kza" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fnX-FX-bQ9"/>
                             <constraint firstItem="QLW-FS-kza" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pMa-x7-iS6"/>
                             <constraint firstItem="Kil-e3-Slv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="r0a-cj-PaU"/>
@@ -155,9 +155,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="KQo-xf-NJh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bg" translatesAutoresizingMaskIntoConstraints="NO" id="KQo-xf-NJh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hYv-oS-3E9">
                                 <rect key="frame" x="64" y="144" width="247.5" height="379"/>
@@ -286,17 +285,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="SkipLesson:" destination="sFl-Sg-Z3K" eventType="touchUpInside" id="qDm-c0-X6d"/>
                                     <segue destination="Dmb-xV-kpI" kind="show" identifier="lessonTest" id="aEr-5k-vaM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.32549019610000002" green="0.14117647059999999" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="KQo-xf-NJh" firstAttribute="top" secondItem="B9Q-IJ-aCT" secondAttribute="top" id="5ad-04-8ew"/>
                             <constraint firstItem="svf-PC-tCx" firstAttribute="centerX" secondItem="B9Q-IJ-aCT" secondAttribute="centerX" id="BQY-Is-LKo"/>
                             <constraint firstItem="hYv-oS-3E9" firstAttribute="centerX" secondItem="B9Q-IJ-aCT" secondAttribute="centerX" id="Jwh-hh-T8V"/>
+                            <constraint firstItem="KQo-xf-NJh" firstAttribute="leading" secondItem="yOn-Az-cZU" secondAttribute="leading" id="Rbu-jZ-HL5"/>
                             <constraint firstItem="hYv-oS-3E9" firstAttribute="centerY" secondItem="B9Q-IJ-aCT" secondAttribute="centerY" id="YLy-Zf-WR8"/>
                             <constraint firstItem="yOn-Az-cZU" firstAttribute="bottom" secondItem="svf-PC-tCx" secondAttribute="bottom" constant="72" id="ZUN-Mh-HHE"/>
+                            <constraint firstItem="KQo-xf-NJh" firstAttribute="trailing" secondItem="yOn-Az-cZU" secondAttribute="trailing" id="jq5-gT-cBH"/>
+                            <constraint firstItem="KQo-xf-NJh" firstAttribute="bottom" secondItem="yOn-Az-cZU" secondAttribute="bottom" id="oZ7-TO-8SI"/>
                             <constraint firstItem="hYv-oS-3E9" firstAttribute="width" secondItem="B9Q-IJ-aCT" secondAttribute="width" multiplier="0.66" id="zSy-TU-Nwd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yOn-Az-cZU"/>
@@ -321,7 +323,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75l-oW-7PM" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="44" y="92" width="287" height="439.5"/>
+                                <rect key="frame" x="44" y="114" width="287" height="439.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="75l-oW-7PM" secondAttribute="height" multiplier="247:379" id="TPZ-Mv-Z1p"/>
@@ -332,8 +334,8 @@
                         <constraints>
                             <constraint firstItem="ecE-Bw-vDh" firstAttribute="leading" secondItem="p4Q-aM-gHa" secondAttribute="leading" id="8dJ-Lj-Umg"/>
                             <constraint firstItem="ecE-Bw-vDh" firstAttribute="bottom" secondItem="p4Q-aM-gHa" secondAttribute="bottom" id="AmS-Qu-7sc"/>
+                            <constraint firstItem="75l-oW-7PM" firstAttribute="centerY" secondItem="jCI-Po-0UY" secondAttribute="centerY" id="MS7-pq-QRV"/>
                             <constraint firstItem="ecE-Bw-vDh" firstAttribute="top" secondItem="jCI-Po-0UY" secondAttribute="top" id="OYV-YZ-XPR"/>
-                            <constraint firstItem="75l-oW-7PM" firstAttribute="top" secondItem="p4Q-aM-gHa" secondAttribute="top" constant="28" id="WoK-BN-bMT"/>
                             <constraint firstItem="75l-oW-7PM" firstAttribute="centerX" secondItem="jCI-Po-0UY" secondAttribute="centerX" id="dhe-1w-V6d"/>
                             <constraint firstItem="75l-oW-7PM" firstAttribute="height" secondItem="jCI-Po-0UY" secondAttribute="height" multiplier="0.659" id="epp-76-O9A"/>
                             <constraint firstItem="ecE-Bw-vDh" firstAttribute="trailing" secondItem="p4Q-aM-gHa" secondAttribute="trailing" id="yGl-jv-zf7"/>
